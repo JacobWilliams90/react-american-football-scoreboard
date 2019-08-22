@@ -24,6 +24,16 @@ function App() {
     updateaState(awayState + 3)
   }
 
+  const [qState, updateqState] = useState(1)
+
+  let nxtQtr = () => {
+    if (qState < 4) {
+      updateqState(qState + 1)
+    }
+    else {
+      updateqState(qState - 3)
+    }
+  }
 
   return (
     <div className="container">
@@ -42,7 +52,7 @@ function App() {
             <div className="away__score">{awayState}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow qVar={qState}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -53,6 +63,9 @@ function App() {
         <div className="awayButtons">
           <button onClick={awayTD} className="awayButtons__touchdown">Away Touchdown</button>
           <button onClick={awayFG} className="awayButtons__fieldGoal">Away Field Goal</button>
+        </div>
+        <div>
+          <button onClick={nxtQtr} className='qtrButton'>Next Quarter</button>
         </div>
       </section>
     </div>
