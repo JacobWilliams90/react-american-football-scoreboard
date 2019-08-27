@@ -1,7 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 
-const BottomRow = () => {
+const BottomRow = (props) => {
+  // const [qState, updateqState] = useState(1)
+
+  // let nxtQtr = () => {
+  //   if (qState < 4) {
+  //     updateqState(qState + 1)
+  //   }
+  //   else {
+  //     updateqState(qState - 3)
+  //   }
+  // }
+
+
   return (
     <div className="bottomRow">
       <div className="down">
@@ -18,7 +30,7 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">4</div>
+        <div className="quarter__value">{props.qVar}</div>
       </div>
     </div>
   );
